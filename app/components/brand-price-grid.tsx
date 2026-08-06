@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { BRAND_BY_SLUG, BRAND_ENTRY_PRICES } from "../data/brands";
 
@@ -46,7 +47,7 @@ export function BrandPriceGrid({ title }: { title?: string }) {
 
           return (
             <li key={slug}>
-              <a href={`#brand-${slug}`} className="group block">
+              <Link href="/buy-refurbished" className="group block">
                 <div
                   // Fixed height rather than aspect-square: the tiles span the
                   // full content width, and a square would make them huge.
@@ -71,7 +72,7 @@ export function BrandPriceGrid({ title }: { title?: string }) {
                 <p className="text-center text-[15px] font-semibold text-[#0b0d0e]">
                   ₹{inr.format(price)}
                 </p>
-              </a>
+              </Link>
             </li>
           );
         })}
