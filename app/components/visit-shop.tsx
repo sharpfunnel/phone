@@ -82,8 +82,19 @@ export function VisitShop() {
   return (
     <section id="visit" className="bg-white py-20 lg:py-24">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-        <div className="rounded-3xl bg-[#1c64f2] p-8 lg:p-12">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+        <div className="relative overflow-hidden rounded-3xl bg-[#1c64f2] p-8 lg:p-12">
+          {[
+            "-right-20 -top-24 h-72 w-72",
+            "-bottom-32 -left-16 h-80 w-80",
+          ].map((position) => (
+            <span
+              key={position}
+              aria-hidden="true"
+              className={`pointer-events-none absolute rounded-full bg-white/[0.09] ${position}`}
+            />
+          ))}
+
+          <div className="relative flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
             <div>
               <p className="text-[13px] font-medium uppercase tracking-[0.14em] text-white/65">
                 Visit us
@@ -118,7 +129,7 @@ export function VisitShop() {
             </div>
           </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.6fr)]">
+          <div className="relative mt-10 grid gap-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.6fr)]">
             <div className="rounded-2xl bg-white/10 p-7">
               <ul className="space-y-6 text-white">
                 <li className="flex gap-3">
