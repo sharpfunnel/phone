@@ -1,6 +1,11 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
+
+import { useAuth } from "./auth-provider";
 
 import type { PhoneModel } from "../data/models";
 import {
@@ -35,6 +40,76 @@ function Tick({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
+/** Same frame whether or not we have a bench photo, so nothing shifts. */
+function PhoneImage({
+  photo,
+  alt,
+  size,
+}: {
+  photo?: string;
+  alt: string;
+  size: number;
+}) {
+  const compact = size < 120;
+
+  return (
+    <div
+      className="flex shrink-0 items-center justify-center overflow-hidden rounded-xl bg-[#f5f6f7]"
+      style={{ width: size, height: size }}
+    >
+      {photo ? (
+        <Image
+          src={photo}
+          alt={alt}
+          width={size}
+          height={size}
+          style={{ width: size, height: size }}
+          className="object-cover"
+        />
+      ) : (
+        <div className="flex flex-col items-center gap-2 px-2 text-center text-[#b3b8bd]">
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            className={compact ? "h-6 w-6" : "h-9 w-9"}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={1.5}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <rect x="6.5" y="2" width="11" height="20" rx="2.5" />
+            <line x1="10.5" y1="18.5" x2="13.5" y2="18.5" />
+          </svg>
+          {!compact && (
+            <span className="text-[12px] text-[#8b9197]">
+              Photo coming soon
+            </span>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function Lock() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className="h-[0.55em] w-[0.55em] shrink-0"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.9}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="4.5" y="10.5" width="15" height="10" rx="2.5" />
+      <path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3" />
+    </svg>
+  );
+}
+
 function Arrow() {
   return (
     <svg
@@ -55,16 +130,24 @@ function Arrow() {
 export function SellFlow({
   model,
   variants,
+  photo,
   aside,
 }: {
   model: PhoneModel;
   variants: string[];
+  photo?: string;
   /** Shown beside the first two stages; the questions stage brings its own. */
   aside?: React.ReactNode;
 }) {
   const [stage, setStage] = useState<Stage>("variant");
   const [variant, setVariant] = useState<string | null>(null);
   const [answers, setAnswers] = useState<Record<string, string>>({});
+
+  const { ready, user, saveQuote } = useAuth();
+  const pathname = usePathname();
+  const loginHref = `/login?next=${encodeURIComponent(pathname)}`;
+  // Treat "still loading" as signed out so the figure never flashes visible.
+  const locked = !ready || !user;
 
   const maxPrice = variant ? maxPriceFor(model, variant) : 0;
   const estimate = useMemo(
@@ -74,6 +157,12 @@ export function SellFlow({
 
   const answeredCount = QUESTIONS.filter((q) => answers[q.id]).length;
   const allAnswered = answeredCount === QUESTIONS.length;
+
+  // Remember the finished quote against the signed-in account.
+  useEffect(() => {
+    if (!allAnswered || !variant || !user) return;
+    saveQuote({ model: `${model.brand} ${model.name}`, variant, amount: estimate });
+  }, [allAnswered, variant, user, estimate, model, saveQuote]);
 
   function pickVariant(next: string) {
     setVariant(next);
@@ -92,6 +181,14 @@ export function SellFlow({
   if (stage === "variant") {
     return withAside(
       <div className="rounded-2xl border border-black/[0.08] bg-white p-8">
+        <div className="mb-8 flex justify-center">
+          <PhoneImage
+            photo={photo}
+            alt={`${model.brand} ${model.name}`}
+            size={200}
+          />
+        </div>
+
         <div className="flex items-baseline gap-3">
           <span className="text-[22px] font-semibold tracking-tight text-[#1c64f2]">
             01
@@ -114,7 +211,9 @@ export function SellFlow({
             >
               <span className="text-[15px] text-[#0b0d0e]">{option}</span>
               <span className="text-[13px] text-[#6b7177]">
-                up to ₹{inr.format(maxPriceFor(model, option))}
+                {locked
+                  ? "up to ₹ XX,XXX"
+                  : `up to ₹${inr.format(maxPriceFor(model, option))}`}
               </span>
             </button>
           ))}
@@ -127,7 +226,14 @@ export function SellFlow({
   if (stage === "quote") {
     return withAside(
       <div className="overflow-hidden rounded-2xl border border-black/[0.08] bg-white">
-        <div className="p-8">
+        <div className="flex flex-col gap-7 p-8 sm:flex-row sm:items-start">
+          <PhoneImage
+            photo={photo}
+            alt={`${model.brand} ${model.name}`}
+            size={180}
+          />
+
+          <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-3">
             <h2 className="text-[26px] font-semibold tracking-tight text-[#0b0d0e]">
               {model.name}
@@ -138,22 +244,46 @@ export function SellFlow({
           </div>
 
           <p className="mt-6 text-[14px] text-[#6b7177]">You get up to</p>
-          <p className="mt-1 text-[clamp(2.5rem,6vw,3.5rem)] font-semibold leading-none tracking-[-0.03em] text-[#0b0d0e]">
-            ₹{inr.format(maxPrice)}
-          </p>
-          <p className="mt-3 max-w-md text-[14px] leading-[1.6] text-[#6b7177]">
-            That is the flawless-condition price. Answer five questions and we
-            will show you exactly what your phone is worth.
-          </p>
 
-          <button
-            type="button"
-            onClick={() => setStage("questions")}
-            className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#1c64f2] px-8 py-4 text-[15px] font-medium text-white transition-colors hover:bg-[#1751c9] sm:w-auto"
-          >
-            Sell my phone now
-            <Arrow />
-          </button>
+          {locked ? (
+            <>
+              {/* The figure is never rendered while signed out — blurring it
+                  would still leave it in the DOM and selectable. */}
+              <p className="mt-1 flex items-center gap-3 text-[clamp(2.5rem,6vw,3.5rem)] font-semibold leading-none tracking-[-0.03em] text-[#9aa0a6]">
+                ₹ XX,XXX
+                <Lock />
+              </p>
+              <p className="mt-4 max-w-md text-[14px] leading-[1.6] text-[#6b7177]">
+                Sign in with your mobile number to see the exact figure and lock
+                it for 7 days.
+              </p>
+              <Link
+                href={loginHref}
+                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#1c64f2] px-8 py-4 text-[15px] font-medium text-white transition-colors hover:bg-[#1751c9] sm:w-auto"
+              >
+                Log in to see your price
+                <Arrow />
+              </Link>
+            </>
+          ) : (
+            <>
+              <p className="mt-1 text-[clamp(2.5rem,6vw,3.5rem)] font-semibold leading-none tracking-[-0.03em] text-[#0b0d0e]">
+                ₹{inr.format(maxPrice)}
+              </p>
+              <p className="mt-3 max-w-md text-[14px] leading-[1.6] text-[#6b7177]">
+                That is the flawless-condition price. Answer five questions and
+                we will show you exactly what your phone is worth.
+              </p>
+              <button
+                type="button"
+                onClick={() => setStage("questions")}
+                className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#1c64f2] px-8 py-4 text-[15px] font-medium text-white transition-colors hover:bg-[#1751c9] sm:w-auto"
+              >
+                Sell my phone now
+                <Arrow />
+              </button>
+            </>
+          )}
 
           <button
             type="button"
@@ -162,6 +292,7 @@ export function SellFlow({
           >
             Change variant
           </button>
+          </div>
         </div>
 
         <ul className="flex flex-wrap gap-x-8 gap-y-3 border-t border-black/[0.07] bg-[#f7f8f8] px-8 py-5">
@@ -183,12 +314,21 @@ export function SellFlow({
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
       <div className="rounded-2xl border border-black/[0.08] bg-white p-8">
-        <p className="text-[13px] font-medium uppercase tracking-[0.12em] text-[#1c64f2]">
-          Evaluating
-        </p>
-        <h2 className="mt-1.5 text-[20px] font-semibold tracking-tight text-[#0b0d0e]">
-          {model.brand} {model.name} ({variant})
-        </h2>
+        <div className="flex items-center gap-4">
+          <PhoneImage
+            photo={photo}
+            alt={`${model.brand} ${model.name}`}
+            size={72}
+          />
+          <div className="min-w-0">
+            <p className="text-[13px] font-medium uppercase tracking-[0.12em] text-[#1c64f2]">
+              Evaluating
+            </p>
+            <h2 className="mt-1 text-[20px] font-semibold tracking-tight text-[#0b0d0e]">
+              {model.brand} {model.name} ({variant})
+            </h2>
+          </div>
+        </div>
 
         {/* Step rail doubles as the progress indicator. */}
         <ol className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px]">

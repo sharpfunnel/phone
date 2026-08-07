@@ -27,6 +27,25 @@ export function variantsFor(model: PhoneModel) {
   return model.variants ?? DEFAULT_VARIANTS;
 }
 
+/**
+ * Only the models we have bench photos for. Everything else falls back to a
+ * placeholder — add a file to /public/phones and a line here to fill one in.
+ */
+const MODEL_PHOTOS: Record<string, string> = {
+  "iphone-13": "/phones/iphone-13.jpg",
+  "iphone-12": "/phones/iphone-12.jpg",
+  "iphone-11": "/phones/iphone-11.jpg",
+  "galaxy-s22": "/phones/galaxy-s22.jpg",
+  "galaxy-s21-fe": "/phones/galaxy-s21-fe.jpg",
+  "oneplus-11": "/phones/oneplus-11.jpg",
+  "pixel-7": "/phones/pixel-7.jpg",
+  "nothing-phone-2": "/phones/nothing-phone-2.jpg",
+};
+
+export function photoFor(model: PhoneModel) {
+  return MODEL_PHOTOS[modelSlug(model.name)];
+}
+
 /** Phones only. Extend freely — the search reads straight from this list. */
 export const PHONE_MODELS: PhoneModel[] = [
   // Apple

@@ -4,28 +4,28 @@ const COLUMNS = [
   {
     heading: "Sell",
     links: [
-      { label: "Get a quote", href: "#quote" },
-      { label: "How it works", href: "#how-it-works" },
-      { label: "Price lock", href: "#how-it-works" },
-      { label: "Pickup areas", href: "#visit" },
+      { label: "Get a quote", href: "/#sell" },
+      { label: "How it works", href: "/#how-it-works" },
+      { label: "Price lock", href: "/#how-it-works" },
+      { label: "Pickup areas", href: "/#visit" },
     ],
   },
   {
     heading: "Buy",
     links: [
       { label: "Refurbished phones", href: "/buy-refurbished" },
-      { label: "Grades explained", href: "#faq" },
-      { label: "Warranty", href: "#faq" },
-      { label: "Returns", href: "#faq" },
+      { label: "Grades explained", href: "/#faq" },
+      { label: "Warranty", href: "/#faq" },
+      { label: "Returns", href: "/#faq" },
     ],
   },
   {
     heading: "Company",
     links: [
-      { label: "Reviews", href: "#reviews" },
-      { label: "FAQ", href: "#faq" },
-      { label: "Visit the shop", href: "#visit" },
-      { label: "What we buy", href: "#sell" },
+      { label: "Reviews", href: "/#reviews" },
+      { label: "FAQ", href: "/#faq" },
+      { label: "Visit the shop", href: "/#visit" },
+      { label: "What we buy", href: "/#what-we-buy" },
     ],
   },
 ];

@@ -25,7 +25,7 @@ const STATS = [
 
 export function SellSearch() {
   return (
-    <section className="bg-white py-20 lg:py-24">
+    <section id="sell" className="bg-white py-20 lg:py-24">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
         <div className="relative overflow-hidden rounded-3xl bg-[#1c64f2]">
           {[

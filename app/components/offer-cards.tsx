@@ -7,7 +7,7 @@ const OFFERS = [
   {
     title: "Exchange Offers",
     blurb: "Put your old phone against a newer one and pay only the gap.",
-    href: "#quote",
+    href: "/#sell",
     photo: "/phones/iphone-12.jpg",
     // Each card gets its own blob placement so three blue tiles in a row do
     // not read as one repeated block.

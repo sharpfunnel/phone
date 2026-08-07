@@ -5,7 +5,13 @@ import { notFound } from "next/navigation";
 
 import { SellFlow } from "../../components/sell-flow";
 import { BRANDS } from "../../data/brands";
-import { PHONE_MODELS, findModel, modelSlug, variantsFor } from "../../data/models";
+import {
+  PHONE_MODELS,
+  findModel,
+  modelSlug,
+  photoFor,
+  variantsFor,
+} from "../../data/models";
 
 const STEPS = [
   {
@@ -84,6 +90,7 @@ export default async function SellModelPage({
           <SellFlow
             model={model}
             variants={variants}
+            photo={photoFor(model)}
             aside={
               <aside className="relative h-fit overflow-hidden rounded-2xl bg-[#1c64f2] p-8 text-white">
             {["-right-16 -top-20 h-56 w-56", "-bottom-24 -left-12 h-52 w-52"].map(

@@ -99,7 +99,7 @@ function Tick() {
 
 export function WhatWeBuy() {
   return (
-    <section id="sell" className="bg-[#f4f5f6] py-20 lg:py-24">
+    <section id="what-we-buy" className="bg-[#f4f5f6] py-20 lg:py-24">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
         <h2 className="max-w-2xl text-[clamp(1.75rem,3vw,2.4rem)] font-normal leading-[1.15] tracking-[-0.02em] text-[#0b0d0e]">
           What we buy

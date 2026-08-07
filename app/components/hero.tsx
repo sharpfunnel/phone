@@ -38,13 +38,13 @@ export function Hero() {
           </p>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <a
-              href="#quote"
+            <Link
+              href="/#sell"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1c64f2] px-8 py-4 text-base font-medium text-white transition-colors hover:bg-[#1751c9]"
             >
               <SwapLabel>Get my selling price</SwapLabel>
               <ArrowSwap />
-            </a>
+            </Link>
             <Link
               href="/buy-refurbished"
               className="inline-flex items-center justify-center rounded-full border border-black/10 bg-white px-8 py-4 text-base font-medium text-[#111315] transition-colors hover:bg-[#f2f3f4]"

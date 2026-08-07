@@ -1,11 +1,15 @@
 import Link from "next/link";
 
+import { AuthNav } from "./auth-nav";
+
+// Rooted at "/" so they also work from /buy-refurbished, /sell/* and /login,
+// where a bare "#hash" would do nothing.
 const NAV_LINKS = [
-  { label: "Sell", href: "#sell" },
+  { label: "Sell", href: "/#sell" },
   { label: "Buy refurbished", href: "/buy-refurbished" },
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "FAQ", href: "#faq" },
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export function SiteHeader() {
@@ -40,18 +44,19 @@ export function SiteHeader() {
         <div className="ml-auto flex items-center gap-6">
           <a
             href="tel:+919810044119"
-            className="hidden text-[15px] text-white transition-opacity hover:opacity-75 sm:block"
+            className="hidden text-[15px] text-white transition-opacity hover:opacity-75 lg:block"
           >
             +91 98100 44119
           </a>
+          <AuthNav />
           {/* Outlined rather than a solid white pill, so its label can be white
               like the rest of the header text. */}
-          <a
-            href="#quote"
+          <Link
+            href="/login?next=/%23sell"
             className="rounded-full border border-white px-6 py-3 text-[15px] font-medium text-white transition-colors hover:bg-white/15"
           >
             Get a quote
-          </a>
+          </Link>
         </div>
       </div>
     </header>

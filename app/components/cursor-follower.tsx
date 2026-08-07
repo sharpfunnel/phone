@@ -22,6 +22,39 @@ export function CursorFollower() {
     const root = document.documentElement;
     root.classList.add("has-custom-cursor");
 
+    // Promote both layers into the top layer. Browsers without the popover
+    // API ignore the attribute entirely and render them as ordinary elements,
+    // which is a fine fallback everywhere except over a modal.
+    const promote = () => {
+      for (const el of [ring, dot]) {
+        if (typeof el.showPopover !== "function") continue;
+        try {
+          if (el.matches(":popover-open")) el.hidePopover();
+          el.showPopover();
+        } catch {
+          // Ignore — the element is simply not connected yet.
+        }
+      }
+    };
+    promote();
+
+    // The top layer stacks by promotion order, so when a <dialog> opens it
+    // lands above us. Re-promote to get back on top.
+    const observer = new MutationObserver((records) => {
+      for (const record of records) {
+        const el = record.target as HTMLElement;
+        if (el.tagName === "DIALOG" && el.hasAttribute("open")) {
+          promote();
+          return;
+        }
+      }
+    });
+    observer.observe(document.body, {
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["open"],
+    });
+
     let targetX = 0;
     let targetY = 0;
     let ringX = 0;
@@ -103,6 +136,7 @@ export function CursorFollower() {
       document.removeEventListener("mouseleave", onLeave);
       document.removeEventListener("mouseenter", onEnter);
       if (frame) cancelAnimationFrame(frame);
+      observer.disconnect();
       root.classList.remove(
         "has-custom-cursor",
         "cursor-ready",
@@ -113,8 +147,18 @@ export function CursorFollower() {
 
   return (
     <>
-      <div ref={ringRef} aria-hidden="true" className="cursor-ring" />
-      <div ref={dotRef} aria-hidden="true" className="cursor-dot" />
+      <div
+        ref={ringRef}
+        aria-hidden="true"
+        popover="manual"
+        className="cursor-ring"
+      />
+      <div
+        ref={dotRef}
+        aria-hidden="true"
+        popover="manual"
+        className="cursor-dot"
+      />
     </>
   );
 }

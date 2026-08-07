@@ -18,13 +18,23 @@ body {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
-/* Custom cursor, in the brand blue. */
+/* Custom cursor, in the brand blue.
+
+   These are popovers so they live in the browser's top layer. A modal
+   <dialog> is promoted there too and sits above every z-index, so a normally
+   positioned cursor would be painted behind the inspection-report modal. */
 .cursor-dot,
 .cursor-ring {
   position: fixed;
+  inset: auto;
   top: 0;
   left: 0;
   z-index: 9999;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
   pointer-events: none;
   opacity: 0;
   will-change: transform;
