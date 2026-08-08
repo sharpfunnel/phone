@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { NAV_LINKS } from "../data/nav";
+import { AuthNav } from "./auth-nav";
 import { HeaderSearch } from "./header-search";
 
 export function SiteHeader() {
@@ -34,6 +35,10 @@ export function SiteHeader() {
 
         <div className="ml-auto flex items-center gap-4 sm:gap-6">
           <HeaderSearch />
+          {/* Desktop only — on phones the bottom bar carries the account tab. */}
+          <div className="hidden md:block">
+            <AuthNav />
+          </div>
           <a
             href="tel:+919810044119"
             className="hidden shrink-0 whitespace-nowrap text-[15px] text-white transition-opacity hover:opacity-75 xl:block"
