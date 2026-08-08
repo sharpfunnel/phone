@@ -20,7 +20,9 @@ function PhotoIcon() {
 
 export function PhoneCard({ phone }: { phone: Phone }) {
   return (
-    <li className="flex flex-col rounded-2xl border border-black/[0.07] bg-white p-3">
+    // Fixed width while the list is a horizontal scroller on phones; back to
+    // filling its grid cell from sm up.
+    <li className="flex w-[78vw] max-w-[320px] shrink-0 snap-start flex-col rounded-2xl border border-black/[0.07] bg-white p-3 sm:w-auto sm:max-w-none sm:shrink">
       <div className="relative aspect-square overflow-hidden rounded-xl">
         {phone.photo ? (
           <Image
@@ -82,7 +84,9 @@ export function PhoneCard({ phone }: { phone: Phone }) {
 
 export function PhoneGrid({ phones }: { phones: Phone[] }) {
   return (
-    <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    // Swipeable row on phones, grid from sm up. Native scroll with snap points
+    // means touch, trackpad and keyboard all work without extra JS.
+    <ul className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4">
       {phones.map((phone) => (
         <PhoneCard key={`${phone.name}-${phone.storage}`} phone={phone} />
       ))}

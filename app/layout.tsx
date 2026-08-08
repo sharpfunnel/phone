@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "./components/auth-provider";
 import { CursorFollower } from "./components/cursor-follower";
+import { MobileNav } from "./components/mobile-nav";
 import { SiteFooter } from "./components/site-footer";
 import { SiteHeader } from "./components/site-header";
 
@@ -28,11 +29,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col font-sans">
+      <body className="flex min-h-full flex-col pb-[68px] font-sans md:pb-0">
         <AuthProvider>
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />
+          <MobileNav />
           <CursorFollower />
         </AuthProvider>
       </body>

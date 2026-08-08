@@ -207,7 +207,9 @@ export function AccountView() {
                 className="mt-1.5 w-full rounded-xl border border-white/45 bg-white/10 px-4 py-2.5 text-[14px] text-white outline-none placeholder:text-white/55 focus:border-white"
               />
             </div>
-            <div className="flex items-end gap-3">
+            {/* Centre the pair against each other, then drop the whole group
+                to the bottom of the row so it lines up with the inputs. */}
+            <div className="flex items-center gap-4 sm:self-end sm:pb-0.5">
               <button
                 type="submit"
                 className="rounded-full bg-white px-5 py-2.5 text-[14px] font-medium text-[#1c64f2] transition-colors hover:bg-[#e8efff]"
@@ -244,17 +246,22 @@ export function AccountView() {
       <div className="mt-6 grid gap-6 lg:grid-cols-[240px_minmax(0,1fr)]">
         {/* Vertical rail instead of the reference's pill tabs — it leaves room
             for sections to be added without wrapping. */}
-        <nav aria-label="Account sections">
-          <ul className="flex gap-2 overflow-x-auto rounded-2xl border border-black/[0.08] bg-white p-2 lg:flex-col lg:overflow-visible">
+        {/* min-w-0 on both grid children: without it a grid item defaults to
+            min-width:auto and the tab row pushes the whole page wider than the
+            viewport on a phone. */}
+        <nav aria-label="Account sections" className="min-w-0">
+          <ul className="flex flex-wrap gap-2 rounded-2xl border border-black/[0.08] bg-white p-2 lg:flex-col lg:flex-nowrap">
             {SECTIONS.map((item) => {
               const active = section === item.id;
               return (
-                <li key={item.id} className="shrink-0 lg:shrink">
+                // Content-width on mobile so labels never overlap; full width
+                // once the rail goes vertical.
+                <li key={item.id} className="lg:w-full">
                   <button
                     type="button"
                     onClick={() => setSection(item.id)}
                     aria-current={active ? "page" : undefined}
-                    className={`w-full whitespace-nowrap rounded-xl px-4 py-3 text-left text-[15px] transition-colors ${
+                    className={`w-full whitespace-nowrap rounded-xl px-4 py-3 text-center text-[15px] transition-colors lg:text-left ${
                       active
                         ? "bg-[#eaf0fe] font-medium text-[#1c64f2]"
                         : "text-[#3d4348] hover:bg-[#f7f8f8]"
@@ -273,7 +280,7 @@ export function AccountView() {
           </ul>
         </nav>
 
-        <section className="min-h-[380px] rounded-2xl border border-black/[0.08] bg-white">
+        <section className="min-w-0 min-h-[380px] rounded-2xl border border-black/[0.08] bg-white">
           {section === "quotes" &&
             (quotes.length === 0 ? (
               <EmptyState

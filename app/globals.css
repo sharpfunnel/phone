@@ -80,7 +80,7 @@ body {
 
 /* Hide the native pointer only where ours has taken over. Text fields keep
    their I-beam — losing it makes an input feel broken. */
-@media (pointer: fine) {
+@media (pointer: fine) and (min-width: 768px) {
   .has-custom-cursor,
   .has-custom-cursor * {
     cursor: none;

@@ -1,6 +1,24 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useSyncExternalStore } from "react";
+
+/** Reactive media query — re-evaluates when the viewport crosses the breakpoint. */
+function useMediaQuery(query: string) {
+  const subscribe = useCallback(
+    (onChange: () => void) => {
+      const mq = window.matchMedia(query);
+      mq.addEventListener("change", onChange);
+      return () => mq.removeEventListener("change", onChange);
+    },
+    [query],
+  );
+
+  return useSyncExternalStore(
+    subscribe,
+    () => window.matchMedia(query).matches,
+    () => false,
+  );
+}
 
 /**
  * A dot that sits exactly on the pointer with a ring that eases in behind it.
@@ -11,8 +29,11 @@ export function CursorFollower() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
 
+  // A mouse is not enough: a phone-width window gets the normal cursor back.
+  const enabled = useMediaQuery("(pointer: fine) and (min-width: 768px)");
+
   useEffect(() => {
-    if (!window.matchMedia("(pointer: fine)").matches) return;
+    if (!enabled) return;
 
     const dot = dotRef.current;
     const ring = ringRef.current;
@@ -143,7 +164,7 @@ export function CursorFollower() {
         "cursor-on-blue",
       );
     };
-  }, []);
+  }, [enabled]);
 
   return (
     <>

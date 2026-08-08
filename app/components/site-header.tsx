@@ -1,32 +1,23 @@
 import Link from "next/link";
 
-import { AuthNav } from "./auth-nav";
-
-// Rooted at "/" so they also work from /buy-refurbished, /sell/* and /login,
-// where a bare "#hash" would do nothing.
-const NAV_LINKS = [
-  { label: "Sell", href: "/#sell" },
-  { label: "Buy refurbished", href: "/buy-refurbished" },
-  { label: "How it works", href: "/#how-it-works" },
-  { label: "Reviews", href: "/#reviews" },
-  { label: "FAQ", href: "/#faq" },
-];
+import { NAV_LINKS } from "../data/nav";
+import { HeaderSearch } from "./header-search";
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 bg-[#1c64f2]">
-      <div className="mx-auto flex h-20 max-w-[1400px] items-center gap-10 px-6 lg:px-12">
+      <div className="mx-auto flex h-20 max-w-[1400px] items-center gap-4 px-6 sm:gap-10 lg:px-12">
         <Link
           href="/"
-          className="text-xl font-semibold tracking-tight text-white"
+          className="shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight text-white"
         >
           Electronics<span className="text-white">.</span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden shrink-0 items-center gap-6 md:flex lg:gap-8">
           {NAV_LINKS.map((link) => {
             const className =
-              "text-[15px] text-white transition-opacity hover:opacity-75";
+              "whitespace-nowrap text-[15px] text-white transition-opacity hover:opacity-75";
 
             // Real routes navigate client-side; the rest are in-page anchors.
             return link.href.startsWith("/") ? (
@@ -41,19 +32,19 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="ml-auto flex items-center gap-6">
+        <div className="ml-auto flex items-center gap-4 sm:gap-6">
+          <HeaderSearch />
           <a
             href="tel:+919810044119"
-            className="hidden text-[15px] text-white transition-opacity hover:opacity-75 lg:block"
+            className="hidden shrink-0 whitespace-nowrap text-[15px] text-white transition-opacity hover:opacity-75 xl:block"
           >
             +91 98100 44119
           </a>
-          <AuthNav />
           {/* Outlined rather than a solid white pill, so its label can be white
               like the rest of the header text. */}
           <Link
             href="/login?next=/%23sell"
-            className="rounded-full border border-white px-6 py-3 text-[15px] font-medium text-white transition-colors hover:bg-white/15"
+            className="hidden whitespace-nowrap rounded-full border border-white px-4 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/15 sm:inline-block sm:px-6 sm:py-3 sm:text-[15px]"
           >
             Get a quote
           </Link>

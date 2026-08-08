@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { BRANDS, type Brand } from "../data/brands";
 
-const LOGO_HEIGHT = 22;
+const LOGO_HEIGHT = 26;
 
 function Logo({ brand }: { brand: Brand }) {
   return (
@@ -26,6 +26,15 @@ export function BrandMarquee() {
   return (
     <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
       <div className="relative overflow-hidden border-t border-black/5 bg-white py-10">
+        {/* From md up the label overlays the track, its backdrop fading to the
+            strip colour so logos slide under it rather than being clipped. On a
+            phone that overlay would eat most of the width, so it sits above the
+            track as an ordinary heading instead. */}
+        <p className="mb-7 text-center text-[15px] font-semibold uppercase tracking-[0.09em] text-black md:pointer-events-none md:text-left md:absolute md:inset-y-0 md:left-0 md:z-10 md:mb-0 md:flex md:items-center md:whitespace-nowrap md:bg-gradient-to-l md:from-transparent md:via-white md:via-30% md:to-white md:pr-28 md:text-[19px] md:leading-[1.3]">
+          Brands we buy
+          <br className="hidden md:inline" /> and resell
+        </p>
+
         {/* Two identical tracks scroll side by side; each resets after exactly
             its own width, so the second copy is always covering the seam. */}
         <div
@@ -44,16 +53,6 @@ export function BrandMarquee() {
           </ul>
         </div>
 
-        {/* Label sits on top of the track. Its backdrop fades from transparent
-            to the strip colour, so logos travelling left slide under it and
-            vanish rather than being clipped at a hard edge. */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center bg-gradient-to-l from-transparent via-white via-30% to-white pr-20 sm:pr-32">
-          <p className="whitespace-nowrap text-[16px] font-semibold uppercase leading-[1.3] tracking-[0.09em] text-black sm:text-[19px]">
-            Brands we buy
-            <br />
-            and resell
-          </p>
-        </div>
       </div>
     </div>
   );

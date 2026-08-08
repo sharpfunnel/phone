@@ -4,6 +4,19 @@ import Link from "next/link";
 
 import { useAuth } from "./auth-provider";
 
+function PersonIcon() {
+  return (
+    <svg
+      viewBox="0 -960 960 960"
+      aria-hidden="true"
+      fill="currentColor"
+      className="h-6 w-6"
+    >
+      <path d="M367-527q-47-47-47-113t47-113q47-47 113-47t113 47q47 47 47 113t-47 113q-47 47-113 47t-113-47ZM160-240v-32q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v32q0 33-23.5 56.5T720-160H240q-33 0-56.5-23.5T160-240Zm80 0h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm296.5-343.5Q560-607 560-640t-23.5-56.5Q513-720 480-720t-56.5 23.5Q400-673 400-640t23.5 56.5Q447-560 480-560t56.5-23.5ZM480-640Zm0 400Z" />
+    </svg>
+  );
+}
+
 export function AuthNav() {
   const { ready, user } = useAuth();
 
@@ -11,12 +24,27 @@ export function AuthNav() {
   // "Log in" at someone who is already signed in.
   if (!ready) return <span className="w-16" aria-hidden />;
 
+  // Signed in, the icon stands in for the label — so it carries the accessible
+  // name and a tooltip, which a bare icon link would not.
+  if (user) {
+    return (
+      <Link
+        href="/account"
+        aria-label="My account"
+        title="My account"
+        className="flex items-center text-white transition-opacity hover:opacity-75"
+      >
+        <PersonIcon />
+      </Link>
+    );
+  }
+
   return (
     <Link
-      href={user ? "/account" : "/login"}
-      className="text-[15px] text-white transition-opacity hover:opacity-75"
+      href="/login"
+      className="whitespace-nowrap text-[15px] text-white transition-opacity hover:opacity-75"
     >
-      {user ? "My account" : "Log in"}
+      Log in
     </Link>
   );
 }

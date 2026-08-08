@@ -110,18 +110,20 @@ export function VisitShop() {
                 same 32 checks run in front of you, then leave paid.
               </p>
 
-              <div className="mt-6 flex flex-wrap gap-3">
+              {/* Equal halves on a phone so both fit one row; content-width
+                  once there is room. */}
+              <div className="mt-6 flex gap-3">
                 <a
                   href={directionsHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-white px-6 py-3 text-[15px] font-medium text-[#1c64f2] transition-colors hover:bg-[#e8efff]"
+                  className="flex-1 whitespace-nowrap rounded-full bg-white px-4 py-3 text-center text-[15px] font-medium text-[#1c64f2] transition-colors hover:bg-[#e8efff] sm:flex-none sm:px-6"
                 >
                   Get directions
                 </a>
                 <a
                   href={SHOP.phoneHref}
-                  className="rounded-full border border-white px-6 py-3 text-[15px] font-medium text-white transition-colors hover:bg-white/15"
+                  className="flex-1 whitespace-nowrap rounded-full border border-white px-4 py-3 text-center text-[15px] font-medium text-white transition-colors hover:bg-white/15 sm:flex-none sm:px-6"
                 >
                   Call the shop
                 </a>
