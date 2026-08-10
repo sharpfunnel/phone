@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { NAV_LINKS } from "../data/nav";
@@ -8,11 +9,15 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 bg-[#1c64f2]">
       <div className="mx-auto flex h-20 max-w-[1400px] items-center gap-4 px-6 sm:gap-10 lg:px-12">
-        <Link
-          href="/"
-          className="shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight text-white"
-        >
-          Electronics<span className="text-white">.</span>
+        <Link href="/" className="shrink-0" aria-label="F-EX — home">
+          <Image
+            src="/logo-fex.png"
+            alt="F-EX. Buy, sell, exchange."
+            width={263}
+            height={120}
+            priority
+            className="h-9 w-auto sm:h-10"
+          />
         </Link>
 
         <nav className="hidden shrink-0 items-center gap-6 md:flex lg:gap-8">

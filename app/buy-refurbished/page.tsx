@@ -7,7 +7,7 @@ import { PhoneGrid } from "../components/phone-card";
 import { PHONES } from "../data/phones";
 
 export const metadata: Metadata = {
-  title: "Buy refurbished phones — Electronics",
+  title: "Buy refurbished phones — F-EX",
   description:
     "Every phone was bought by us, inspected on 32 points and photographed at the bench. Battery health is printed on each listing, and all of them carry a 6-month warranty.",
 };

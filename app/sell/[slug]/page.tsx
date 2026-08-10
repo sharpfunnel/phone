@@ -37,10 +37,10 @@ export async function generateMetadata({
 }: PageProps<"/sell/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const model = findModel(slug);
-  if (!model) return { title: "Phone not found — Electronics" };
+  if (!model) return { title: "Phone not found — F-EX" };
 
   return {
-    title: `Sell your ${model.name} — Electronics`,
+    title: `Sell your ${model.name} — F-EX`,
     description: `Get a verified price for your ${model.brand} ${model.name} in sixty seconds, locked for 7 days and paid at your door in Delhi NCR.`,
   };
 }

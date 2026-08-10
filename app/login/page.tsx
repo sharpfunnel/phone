@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { LoginForm } from "./login-form";
 
 export const metadata: Metadata = {
-  title: "Sign in — Electronics",
+  title: "Sign in — F-EX",
   description:
     "Sign in with your mobile number to see your locked selling price and track a pickup.",
 };

@@ -101,6 +101,9 @@ export function SellCatalogue({ brand }: { brand?: string }) {
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {models.map((model) => {
             const photo = photoFor(model);
+            // No bench photo for most models yet, so fall back to the brand
+            // mark — more use than a generic grey handset.
+            const logo = BRAND_BY_SLUG[model.brand.toLowerCase()];
 
             return (
               <li key={model.name}>
@@ -116,6 +119,15 @@ export function SellCatalogue({ brand }: { brand?: string }) {
                         width={56}
                         height={56}
                         className="h-14 w-14 object-cover"
+                      />
+                    ) : logo ? (
+                      <Image
+                        src={`/brands/${logo.slug}.png`}
+                        alt=""
+                        width={logo.width}
+                        height={logo.height}
+                        unoptimized
+                        className="max-h-4 w-auto max-w-[38px]"
                       />
                     ) : (
                       <svg

@@ -128,7 +128,7 @@ export function InspectionReport({ phone }: { phone: Phone }) {
 
                   <div className="relative flex-1 overflow-hidden rounded-2xl border border-black/[0.07]">
                     <span className="absolute left-4 top-4 z-10 rounded-full bg-[#1c64f2] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-white">
-                      Electronics Assured
+                      F-EX Assured
                     </span>
 
                     <div className="relative aspect-square">

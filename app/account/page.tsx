@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { AccountView } from "./account-view";
 
 export const metadata: Metadata = {
-  title: "Your account — Electronics",
+  title: "Your account — F-EX",
   description: "Your saved quotes, pickups and account details.",
 };
 

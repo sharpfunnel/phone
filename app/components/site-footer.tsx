@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const COLUMNS = [
@@ -40,9 +41,13 @@ export function SiteFooter() {
     <footer className="bg-[#1c64f2] py-16 lg:py-20">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
         <div className="text-center">
-          <p className="text-xl font-semibold tracking-tight text-white">
-            Electronics<span className="text-white">.</span>
-          </p>
+          <Image
+            src="/logo-fex.png"
+            alt="F-EX. Buy, sell, exchange."
+            width={263}
+            height={120}
+            className="mx-auto h-12 w-auto"
+          />
           <p className="mx-auto mt-4 max-w-xl text-[15px] leading-[1.6] text-white">
             We buy used phones at a printed price and sell them refurbished, with
             the inspection report attached. Doorstep pickup and payout across
@@ -107,7 +112,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-14 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 border-t border-white/20 pt-6 text-[14px] text-white">
-          <p>© {year} Electronics. All rights reserved.</p>
+          <p>© {year} F-EX. All rights reserved.</p>
           <a href="#privacy" className="transition-opacity hover:opacity-75">
             Privacy
           </a>
