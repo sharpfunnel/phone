@@ -31,7 +31,7 @@ function EmptyBox() {
       aria-hidden="true"
       className="h-[150px] w-[180px]"
       fill="none"
-      stroke="#1c64f2"
+      stroke="#fb5908"
       strokeWidth={2.2}
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -41,10 +41,10 @@ function EmptyBox() {
         strokeDasharray="3 5"
         opacity={0.45}
       />
-      <circle cx="60" cy="20" r="2.6" fill="#1c64f2" stroke="none" opacity={0.45} />
-      <path d="M98 46 L98 76 L60 92 L60 62 Z" fill="#eaf0fe" fillOpacity={0.7} />
+      <circle cx="60" cy="20" r="2.6" fill="#fb5908" stroke="none" opacity={0.45} />
+      <path d="M98 46 L98 76 L60 92 L60 62 Z" fill="#ffefe6" fillOpacity={0.7} />
       <path d="M22 46 L22 76 L60 92 L60 62 Z" fill="#ffffff" />
-      <path d="M22 46 L60 30 L98 46 L60 62 Z" fill="#eaf0fe" />
+      <path d="M22 46 L60 30 L98 46 L60 62 Z" fill="#ffefe6" />
     </svg>
   );
 }
@@ -68,7 +68,7 @@ function EmptyState({
       {action && (
         <Link
           href={action.href}
-          className="mt-6 inline-flex rounded-full bg-[#1c64f2] px-6 py-3 text-[14px] font-medium text-white transition-colors hover:bg-[#1751c9]"
+          className="mt-6 inline-flex rounded-full bg-[#fb5908] px-6 py-3 text-[14px] font-medium text-white transition-colors hover:bg-[#d24705]"
         >
           {action.label}
         </Link>
@@ -127,7 +127,7 @@ export function AccountView() {
 
       {/* Identity runs full width as a banner rather than sitting in a side
           card, so the working area below gets the whole page. */}
-      <div className="relative mt-8 overflow-hidden rounded-2xl bg-[#1c64f2] p-8 text-white">
+      <div className="relative mt-8 overflow-hidden rounded-2xl bg-[#fb5908] p-8 text-white">
         {["-right-20 -top-24 h-64 w-64", "-bottom-28 left-1/4 h-56 w-56"].map(
           (position) => (
             <span
@@ -139,7 +139,7 @@ export function AccountView() {
         )}
 
         <div className="relative flex flex-wrap items-center gap-6">
-          <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white text-[24px] font-semibold text-[#1c64f2]">
+          <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white text-[24px] font-semibold text-[#fb5908]">
             {initial}
           </span>
 
@@ -152,7 +152,7 @@ export function AccountView() {
               {user.email ? ` · ${user.email}` : ""}
             </p>
             <p className="mt-0.5 text-[13px] text-white/65">
-              Member since {dateFormat.format(new Date(user.since))} · Delhi NCR
+              Member since {dateFormat.format(new Date(user.since))} · Guwahati
             </p>
           </div>
 
@@ -160,7 +160,7 @@ export function AccountView() {
             <button
               type="button"
               onClick={startEditing}
-              className="rounded-full bg-white px-5 py-2.5 text-[14px] font-medium text-[#1c64f2] transition-colors hover:bg-[#e8efff]"
+              className="rounded-full bg-white px-5 py-2.5 text-[14px] font-medium text-[#fb5908] transition-colors hover:bg-[#ffece0]"
             >
               Edit profile
             </button>
@@ -212,7 +212,7 @@ export function AccountView() {
             <div className="flex items-center gap-4 sm:self-end sm:pb-0.5">
               <button
                 type="submit"
-                className="rounded-full bg-white px-5 py-2.5 text-[14px] font-medium text-[#1c64f2] transition-colors hover:bg-[#e8efff]"
+                className="rounded-full bg-white px-5 py-2.5 text-[14px] font-medium text-[#fb5908] transition-colors hover:bg-[#ffece0]"
               >
                 Save
               </button>
@@ -263,13 +263,13 @@ export function AccountView() {
                     aria-current={active ? "page" : undefined}
                     className={`w-full whitespace-nowrap rounded-xl px-4 py-3 text-center text-[15px] transition-colors lg:text-left ${
                       active
-                        ? "bg-[#eaf0fe] font-medium text-[#1c64f2]"
+                        ? "bg-[#ffefe6] font-medium text-[#fb5908]"
                         : "text-[#3d4348] hover:bg-[#f7f8f8]"
                     }`}
                   >
                     {item.label}
                     {counts[item.id] > 0 && (
-                      <span className="ml-2 rounded-full bg-[#1c64f2] px-2 py-0.5 text-[11px] font-medium text-white">
+                      <span className="ml-2 rounded-full bg-[#fb5908] px-2 py-0.5 text-[11px] font-medium text-white">
                         {counts[item.id]}
                       </span>
                     )}
@@ -314,7 +314,7 @@ export function AccountView() {
                       </div>
 
                       <div className="flex items-center gap-5">
-                        <p className="text-[17px] font-semibold text-[#1c64f2]">
+                        <p className="text-[17px] font-semibold text-[#fb5908]">
                           ₹{inr.format(quote.amount)}
                         </p>
                         <button

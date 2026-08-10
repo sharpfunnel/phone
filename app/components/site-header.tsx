@@ -7,7 +7,7 @@ import { HeaderSearch } from "./header-search";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 bg-[#1c64f2]">
+    <header className="sticky top-0 z-50 bg-[#fb5908]">
       <div className="mx-auto flex h-20 max-w-[1400px] items-center gap-4 px-6 sm:gap-10 lg:px-12">
         <Link href="/" className="shrink-0" aria-label="F-EX — home">
           <Image
@@ -45,10 +45,10 @@ export function SiteHeader() {
             <AuthNav />
           </div>
           <a
-            href="tel:+919810044119"
+            href="tel:+918472833473"
             className="hidden shrink-0 whitespace-nowrap text-[15px] text-white transition-opacity hover:opacity-75 xl:block"
           >
-            +91 98100 44119
+            +91 84728 33473
           </a>
           {/* Outlined rather than a solid white pill, so its label can be white
               like the rest of the header text. */}

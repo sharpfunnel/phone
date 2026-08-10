@@ -37,7 +37,7 @@ export function Faqs() {
           {FAQS.map((faq) => (
             <div
               key={faq.q}
-              className="rounded-xl border border-[#1c64f2] bg-white p-6 shadow-[0_1px_2px_rgba(11,13,14,0.06)]"
+              className="rounded-xl border border-[#fb5908] bg-white p-6 shadow-[0_1px_2px_rgba(11,13,14,0.06)]"
             >
               <dt className="text-[16px] font-semibold tracking-[-0.01em] text-[#0b0d0e]">
                 {faq.q}

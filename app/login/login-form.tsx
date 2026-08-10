@@ -65,7 +65,7 @@ export function LoginForm() {
           >
             Mobile number
           </label>
-          <div className="mt-2 flex items-center gap-2 rounded-xl border border-black/10 px-4 py-3.5 focus-within:border-[#1c64f2]">
+          <div className="mt-2 flex items-center gap-2 rounded-xl border border-black/10 px-4 py-3.5 focus-within:border-[#fb5908]">
             <span className="text-[15px] text-[#6b7177]">+91</span>
             <input
               id="phone"
@@ -76,7 +76,7 @@ export function LoginForm() {
               maxLength={11}
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              placeholder="98100 44119"
+              placeholder="98765 43210"
               className="w-full bg-transparent text-[15px] text-[#0b0d0e] outline-none placeholder:text-[#9aa0a6]"
             />
           </div>
@@ -90,7 +90,7 @@ export function LoginForm() {
           <button
             type="submit"
             disabled={!phoneValid}
-            className="mt-6 w-full rounded-full bg-[#1c64f2] px-8 py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-[#1751c9] disabled:cursor-not-allowed disabled:bg-[#e6e8ea] disabled:text-[#9aa0a6]"
+            className="mt-6 w-full rounded-full bg-[#fb5908] px-8 py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-[#d24705] disabled:cursor-not-allowed disabled:bg-[#e6e8ea] disabled:text-[#9aa0a6]"
           >
             Send me a code
           </button>
@@ -141,7 +141,7 @@ export function LoginForm() {
             value={code}
             onChange={(e) => setCode(e.target.value)}
             placeholder="······"
-            className="mt-2 w-full rounded-xl border border-black/10 px-4 py-3.5 text-center font-mono text-[20px] tracking-[0.4em] text-[#0b0d0e] outline-none focus:border-[#1c64f2]"
+            className="mt-2 w-full rounded-xl border border-black/10 px-4 py-3.5 text-center font-mono text-[20px] tracking-[0.4em] text-[#0b0d0e] outline-none focus:border-[#fb5908]"
           />
 
           {error && (
@@ -153,7 +153,7 @@ export function LoginForm() {
           <button
             type="submit"
             disabled={code.replace(/\D/g, "").length !== 6}
-            className="mt-6 w-full rounded-full bg-[#1c64f2] px-8 py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-[#1751c9] disabled:cursor-not-allowed disabled:bg-[#e6e8ea] disabled:text-[#9aa0a6]"
+            className="mt-6 w-full rounded-full bg-[#fb5908] px-8 py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-[#d24705] disabled:cursor-not-allowed disabled:bg-[#e6e8ea] disabled:text-[#9aa0a6]"
           >
             Verify and continue
           </button>

@@ -38,20 +38,23 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#1c64f2] py-16 lg:py-20">
+    <footer className="bg-[#fb5908] py-16 lg:py-20">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
         <div className="text-center">
+          {/* The full lockup — mascot and wordmark — only appears here; the
+              header carries the wordmark alone so it stays legible small. */}
           <Image
-            src="/logo-fex.png"
+            src="/logo-fex-full.png"
             alt="F-EX. Buy, sell, exchange."
-            width={263}
-            height={120}
-            className="mx-auto h-12 w-auto"
+            width={354}
+            height={123}
+            className="mx-auto h-16 w-auto sm:h-20"
+            priority={false}
           />
           <p className="mx-auto mt-4 max-w-xl text-[15px] leading-[1.6] text-white">
             We buy used phones at a printed price and sell them refurbished, with
             the inspection report attached. Doorstep pickup and payout across
-            Delhi NCR.
+            Guwahati.
           </p>
         </div>
 
@@ -92,10 +95,10 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-3 text-[15px] text-white">
               <li>
                 <a
-                  href="tel:+919810044119"
+                  href="tel:+918472833473"
                   className="transition-opacity hover:opacity-75"
                 >
-                  +91 98100 44119
+                  +91 84728 33473
                 </a>
               </li>
               <li>

@@ -22,7 +22,7 @@ export function PhoneListings() {
 
           <Link
             href="/buy-refurbished"
-            className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-[#1c64f2] px-6 py-3 text-[15px] font-medium text-white transition-colors hover:bg-[#1751c9]"
+            className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-[#fb5908] px-6 py-3 text-[15px] font-medium text-white transition-colors hover:bg-[#d24705]"
           >
             <SwapLabel>All 1,240 phones</SwapLabel>
             <ArrowSwap className="h-4 w-4" />

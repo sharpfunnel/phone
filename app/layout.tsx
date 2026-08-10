@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "F-EX — Sell your old phone, buy a better refurbished one",
   description:
-    "Get a verified price in sixty seconds, locked for 7 days and paid at your door. Or buy a refurbished phone inspected on 32 points with a 6-month warranty. Delhi NCR.",
+    "Get a verified price in sixty seconds, locked for 7 days and paid at your door. Or buy a refurbished phone inspected on 32 points with a 6-month warranty. Guwahati.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

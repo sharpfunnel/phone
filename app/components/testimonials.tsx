@@ -8,7 +8,7 @@ const REVIEWS = [
     quote:
       "The quote said ₹27,400 and ₹27,400 is what hit my account before the agent had even taped the box shut. I had braced myself for the usual haggling at the door and it never came.",
     name: "Aarav Mehta",
-    place: "Rohini",
+    place: "Beltola",
     detail: "Sold an iPhone 12",
     rating: 5,
   },
@@ -16,7 +16,7 @@ const REVIEWS = [
     quote:
       "My screen had a crack running corner to corner and I assumed that meant no offer at all. It was a ₹2,100 deduction, named on screen, and the rest of the price stood.",
     name: "Priya Nair",
-    place: "Gurugram",
+    place: "Ganeshguri",
     detail: "Sold a Galaxy S21 FE",
     rating: 5,
   },
@@ -24,7 +24,7 @@ const REVIEWS = [
     quote:
       "I locked the price on a Tuesday and only got around to booking the pickup that Sunday. It was still the same number. Nobody tried to requote me.",
     name: "Rahul Bansal",
-    place: "Noida",
+    place: "Zoo Road",
     detail: "Sold a OnePlus 9",
     rating: 5,
   },
@@ -32,7 +32,7 @@ const REVIEWS = [
     quote:
       "Bought a refurbished Pixel 7 and the listing had already told me the screen was an OEM replacement. Finding that written down before I paid is why I trusted the rest of it.",
     name: "Sneha Kapoor",
-    place: "Dwarka",
+    place: "Six Mile",
     detail: "Bought a Pixel 7",
     rating: 5,
   },
@@ -40,7 +40,7 @@ const REVIEWS = [
     quote:
       "The agent ran the same 32 checks at my dining table that the website described, and talked me through the factory reset instead of just taking the phone away.",
     name: "Imran Qureshi",
-    place: "Okhla",
+    place: "Maligaon",
     detail: "Sold an iPhone 11",
     rating: 5,
   },
@@ -48,7 +48,7 @@ const REVIEWS = [
     quote:
       "Battery health was 79% and I expected that to be an argument. It was a line item worth ₹900. I have sold three phones here since.",
     name: "Ananya Rao",
-    place: "Indirapuram",
+    place: "Dispur",
     detail: "Sold a Redmi Note 11",
     rating: 4,
   },
@@ -56,7 +56,7 @@ const REVIEWS = [
     quote:
       "Pickup slot was two hours wide and the live map meant I did not waste the afternoon waiting. Payment by UPI landed while the agent was still on my sofa.",
     name: "Vikram Singh",
-    place: "Janakpuri",
+    place: "Chandmari",
     detail: "Sold a Galaxy S22",
     rating: 5,
   },
@@ -64,7 +64,7 @@ const REVIEWS = [
     quote:
       "I had lost the box and the bill years ago. It cost me a few hundred rupees rather than the whole sale, which is not what I had been quoted elsewhere.",
     name: "Meera Joshi",
-    place: "Faridabad",
+    place: "Jalukbari",
     detail: "Sold an iPhone XR",
     rating: 4,
   },
@@ -72,7 +72,7 @@ const REVIEWS = [
     quote:
       "The refurbished OnePlus arrived with the six-month warranty card in the box. Speaker rattled in week three, they collected it and returned it fixed in four days.",
     name: "Karan Malhotra",
-    place: "Saket",
+    place: "Lokhra",
     detail: "Bought a OnePlus 11",
     rating: 5,
   },
@@ -80,7 +80,7 @@ const REVIEWS = [
     quote:
       "They asked for my Aadhaar only after the inspection was finished and the price agreed. Small thing, but it is the part that made me comfortable.",
     name: "Divya Sharma",
-    place: "Vasant Kunj",
+    place: "Panbazar",
     detail: "Sold a Vivo V25",
     rating: 5,
   },
@@ -107,7 +107,7 @@ function Arrow({ dir }: { dir: "left" | "right" }) {
   );
 }
 
-// Rotated through the cards so a row of blue tiles does not read as one
+// Rotated through the cards so a row of brand tiles does not read as one
 // repeated block — same trick as the offer cards.
 const DECOR = [
   ["-right-14 -top-16 h-44 w-44", "-bottom-20 -left-12 h-40 w-40"],
@@ -181,7 +181,7 @@ export function Testimonials() {
             </h2>
             <p className="mt-4 max-w-xl text-[15px] leading-[1.6] text-[#5b6167]">
               Every review below came from someone who sold us a phone or bought
-              one back from us, in Delhi NCR.
+              one back from us, in Guwahati.
             </p>
           </div>
 
@@ -218,7 +218,7 @@ export function Testimonials() {
           {REVIEWS.map((review, i) => (
             <li
               key={review.name}
-              className="relative flex w-[85vw] max-w-[380px] shrink-0 snap-start flex-col overflow-hidden rounded-2xl bg-[#1c64f2] p-7 sm:w-[360px]"
+              className="relative flex w-[85vw] max-w-[380px] shrink-0 snap-start flex-col overflow-hidden rounded-2xl bg-[#fb5908] p-7 sm:w-[360px]"
             >
               {DECOR[i % DECOR.length].map((position) => (
                 <span

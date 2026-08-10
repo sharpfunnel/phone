@@ -47,7 +47,7 @@ export function PhoneCard({ phone }: { phone: Phone }) {
 
       <div className="flex flex-1 flex-col px-1 pb-1 pt-4">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="rounded-full bg-[#eaf0fe] px-2.5 py-1 text-[11px] font-medium text-[#1c64f2]">
+          <span className="rounded-full bg-[#ffefe6] px-2.5 py-1 text-[11px] font-medium text-[#fb5908]">
             Grade {phone.grade}
           </span>
           <span className="rounded-full bg-[#f2f3f4] px-2.5 py-1 text-[11px] font-medium text-[#5b6167]">

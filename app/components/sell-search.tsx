@@ -37,7 +37,7 @@ export function SellSearch({
   return (
     <section id={id} className="bg-white py-20 lg:py-24">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-        <div className="relative overflow-hidden rounded-3xl bg-[#1c64f2]">
+        <div className="relative overflow-hidden rounded-3xl bg-[#fb5908]">
           {[
             "-left-24 -top-20 h-72 w-72",
             "-right-16 top-10 h-56 w-56",
@@ -57,7 +57,7 @@ export function SellSearch({
 
             <Heading className="mx-auto mt-5 max-w-3xl text-[clamp(2rem,4.2vw,3.1rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-white">
               Tell us the model, get{" "}
-              <span className="text-[#bcd3fb]">instant cash</span>
+              <span className="text-[#fecfb3]">instant cash</span>
             </Heading>
 
             <p className="mx-auto mt-5 max-w-lg text-[16px] leading-[1.6] text-white/80">

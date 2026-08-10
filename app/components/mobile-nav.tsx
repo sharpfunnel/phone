@@ -149,7 +149,7 @@ export function MobileNav() {
                 href={tab.href}
                 aria-current={tab.match ? "page" : undefined}
                 className={`flex flex-col items-center gap-1 py-2.5 text-[11px] transition-colors ${
-                  tab.match ? "text-[#1c64f2]" : "text-[#6b7177]"
+                  tab.match ? "text-[#fb5908]" : "text-[#6b7177]"
                 }`}
               >
                 {tab.icon}
@@ -198,9 +198,9 @@ export function MobileNav() {
               <Link
                 href="/account"
                 onClick={closeSheet}
-                className="mt-1 flex items-center gap-4 rounded-2xl bg-[#1c64f2] p-5 text-white"
+                className="mt-1 flex items-center gap-4 rounded-2xl bg-[#fb5908] p-5 text-white"
               >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-[19px] font-semibold text-[#1c64f2]">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-[19px] font-semibold text-[#fb5908]">
                   {initial}
                 </span>
                 <span className="min-w-0 flex-1">
@@ -233,7 +233,7 @@ export function MobileNav() {
                 <Link
                   href="/login"
                   onClick={closeSheet}
-                  className="mt-4 block rounded-full bg-[#1c64f2] px-6 py-3 text-center text-[15px] font-medium text-white transition-colors hover:bg-[#1751c9]"
+                  className="mt-4 block rounded-full bg-[#fb5908] px-6 py-3 text-center text-[15px] font-medium text-white transition-colors hover:bg-[#d24705]"
                 >
                   Log in
                 </Link>
@@ -255,10 +255,10 @@ export function MobileNav() {
             </ul>
 
             <a
-              href="tel:+919810044119"
-              className="mt-4 block rounded-full bg-[#1c64f2] px-6 py-3.5 text-center text-[15px] font-medium text-white transition-colors hover:bg-[#1751c9]"
+              href="tel:+918472833473"
+              className="mt-4 block rounded-full bg-[#fb5908] px-6 py-3.5 text-center text-[15px] font-medium text-white transition-colors hover:bg-[#d24705]"
             >
-              Call +91 98100 44119
+              Call +91 84728 33473
             </a>
           </div>
         )}

@@ -190,7 +190,7 @@ export function SellFlow({
         </div>
 
         <div className="flex items-baseline gap-3">
-          <span className="text-[22px] font-semibold tracking-tight text-[#1c64f2]">
+          <span className="text-[22px] font-semibold tracking-tight text-[#fb5908]">
             01
           </span>
           <h2 className="text-[20px] font-normal tracking-[-0.01em] text-[#0b0d0e]">
@@ -207,7 +207,7 @@ export function SellFlow({
               key={option}
               type="button"
               onClick={() => pickVariant(option)}
-              className="flex items-center justify-between gap-3 rounded-xl border border-black/10 bg-white px-5 py-4 text-left transition-colors hover:border-[#1c64f2] hover:bg-[#eaf0fe]"
+              className="flex items-center justify-between gap-3 rounded-xl border border-black/10 bg-white px-5 py-4 text-left transition-colors hover:border-[#fb5908] hover:bg-[#ffefe6]"
             >
               <span className="text-[15px] text-[#0b0d0e]">{option}</span>
               <span className="text-[13px] text-[#6b7177]">
@@ -238,7 +238,7 @@ export function SellFlow({
             <h2 className="text-[26px] font-semibold tracking-tight text-[#0b0d0e]">
               {model.name}
             </h2>
-            <span className="rounded-full bg-[#eaf0fe] px-3 py-1 text-[13px] font-medium text-[#1c64f2]">
+            <span className="rounded-full bg-[#ffefe6] px-3 py-1 text-[13px] font-medium text-[#fb5908]">
               {variant}
             </span>
           </div>
@@ -259,7 +259,7 @@ export function SellFlow({
               </p>
               <Link
                 href={loginHref}
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#1c64f2] px-8 py-4 text-[15px] font-medium text-white transition-colors hover:bg-[#1751c9] sm:w-auto"
+                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#fb5908] px-8 py-4 text-[15px] font-medium text-white transition-colors hover:bg-[#d24705] sm:w-auto"
               >
                 Log in to see your price
                 <Arrow />
@@ -277,7 +277,7 @@ export function SellFlow({
               <button
                 type="button"
                 onClick={() => setStage("questions")}
-                className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#1c64f2] px-8 py-4 text-[15px] font-medium text-white transition-colors hover:bg-[#1751c9] sm:w-auto"
+                className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#fb5908] px-8 py-4 text-[15px] font-medium text-white transition-colors hover:bg-[#d24705] sm:w-auto"
               >
                 Sell my phone now
                 <Arrow />
@@ -288,7 +288,7 @@ export function SellFlow({
           <button
             type="button"
             onClick={() => setStage("variant")}
-            className="ml-0 mt-3 block text-[14px] text-[#1c64f2] hover:underline sm:ml-6 sm:mt-0 sm:inline-block"
+            className="ml-0 mt-3 block text-[14px] text-[#fb5908] hover:underline sm:ml-6 sm:mt-0 sm:inline-block"
           >
             Change variant
           </button>
@@ -301,7 +301,7 @@ export function SellFlow({
               key={promise}
               className="flex items-center gap-2 text-[14px] text-[#3d4348]"
             >
-              <Tick className="h-4 w-4 text-[#1c64f2]" />
+              <Tick className="h-4 w-4 text-[#fb5908]" />
               {promise}
             </li>
           ))}
@@ -321,7 +321,7 @@ export function SellFlow({
             size={72}
           />
           <div className="min-w-0">
-            <p className="text-[13px] font-medium uppercase tracking-[0.12em] text-[#1c64f2]">
+            <p className="text-[13px] font-medium uppercase tracking-[0.12em] text-[#fb5908]">
               Evaluating
             </p>
             <h2 className="mt-1 text-[20px] font-semibold tracking-tight text-[#0b0d0e]">
@@ -336,7 +336,7 @@ export function SellFlow({
             <li key={question.id} className="flex items-center gap-2">
               <span
                 className={
-                  answers[question.id] ? "text-[#1c64f2]" : "text-[#9aa0a6]"
+                  answers[question.id] ? "text-[#fb5908]" : "text-[#9aa0a6]"
                 }
               >
                 {question.step}
@@ -359,7 +359,7 @@ export function SellFlow({
           aria-label="Questions answered"
         >
           <div
-            className="h-full rounded-full bg-[#1c64f2] transition-[width] duration-300"
+            className="h-full rounded-full bg-[#fb5908] transition-[width] duration-300"
             style={{ width: `${(answeredCount / QUESTIONS.length) * 100}%` }}
           />
         </div>
@@ -388,7 +388,7 @@ export function SellFlow({
                       }
                       className={`min-w-[110px] flex-1 rounded-xl border px-4 py-3 text-[14px] transition-colors sm:flex-none ${
                         chosen
-                          ? "border-[#1c64f2] bg-[#eaf0fe] font-medium text-[#1c64f2]"
+                          ? "border-[#fb5908] bg-[#ffefe6] font-medium text-[#fb5908]"
                           : "border-black/10 text-[#3d4348] hover:bg-[#f7f8f8]"
                       }`}
                     >
@@ -404,7 +404,7 @@ export function SellFlow({
         <button
           type="button"
           onClick={() => setStage("quote")}
-          className="mt-8 text-[14px] text-[#1c64f2] hover:underline"
+          className="mt-8 text-[14px] text-[#fb5908] hover:underline"
         >
           Back to price
         </button>
@@ -416,9 +416,9 @@ export function SellFlow({
           Device evaluation
         </h3>
 
-        <div className="mt-4 rounded-xl bg-[#eaf0fe] p-5">
+        <div className="mt-4 rounded-xl bg-[#ffefe6] p-5">
           <p className="text-[13px] text-[#3d4348]">Estimated value</p>
-          <p className="mt-1 text-[28px] font-semibold tracking-tight text-[#1c64f2]">
+          <p className="mt-1 text-[28px] font-semibold tracking-tight text-[#fb5908]">
             ₹{inr.format(estimate)}
           </p>
           <p className="mt-1 text-[12px] text-[#5b6167]">
@@ -439,7 +439,7 @@ export function SellFlow({
               </dt>
               <dd
                 className={`mt-0.5 text-[13px] ${
-                  answers[question.id] ? "text-[#1c64f2]" : "text-[#9aa0a6]"
+                  answers[question.id] ? "text-[#fb5908]" : "text-[#9aa0a6]"
                 }`}
               >
                 {answers[question.id] ?? "Not answered"}
@@ -456,7 +456,7 @@ export function SellFlow({
           }}
           className={`mt-6 flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[15px] font-medium transition-colors ${
             allAnswered
-              ? "bg-[#1c64f2] text-white hover:bg-[#1751c9]"
+              ? "bg-[#fb5908] text-white hover:bg-[#d24705]"
               : "cursor-not-allowed bg-[#e6e8ea] text-[#9aa0a6]"
           }`}
         >

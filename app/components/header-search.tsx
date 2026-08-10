@@ -151,7 +151,7 @@ export function HeaderSearch() {
                   go(`/buy-refurbished?q=${encodeURIComponent(phone.name)}`)
                 }
                 className={`flex w-full items-center justify-between gap-4 px-4 py-2.5 text-left transition-colors ${
-                  i === active ? "bg-[#f2f5fb]" : "bg-white"
+                  i === active ? "bg-[#fdf4ef]" : "bg-white"
                 }`}
               >
                 <span className="min-w-0">

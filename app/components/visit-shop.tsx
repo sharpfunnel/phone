@@ -1,15 +1,16 @@
-// PLACEHOLDER ADDRESS — replace every field here with the real shop details.
-// `mapQuery` is what the embedded map searches for, so it must match the
-// address or customers will be sent to the wrong place.
+// `mapQuery` is what the embedded map searches for, so it must stay in step
+// with the address above or customers will be sent to the wrong place.
 const SHOP = {
   addressLines: [
-    "Shop 12, Ground Floor",
-    "Nehru Place Market",
-    "New Delhi 110019",
+    "F-EX The Openbox Store, Lokhra",
+    "Beside Sarusajai Stadium, Nalapara",
+    "Lokhra Road, NH37, Kamakhya",
+    "Guwahati 781029",
   ],
-  mapQuery: "Nehru Place Market, New Delhi 110019",
-  phone: "+91 98100 44119",
-  phoneHref: "tel:+919810044119",
+  mapQuery:
+    "Fex The Openbox Store, Lokhra Road NH37, Nalapara, Guwahati 781029",
+  phone: "+91 84728 33473",
+  phoneHref: "tel:+918472833473",
   hours: [
     { days: "Monday to Saturday", time: "10:30 am – 8:00 pm" },
     { days: "Sunday", time: "11:00 am – 6:00 pm" },
@@ -82,7 +83,7 @@ export function VisitShop() {
   return (
     <section id="visit" className="bg-white py-20 lg:py-24">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-        <div className="relative overflow-hidden rounded-3xl bg-[#1c64f2] p-8 lg:p-12">
+        <div className="relative overflow-hidden rounded-3xl bg-[#fb5908] p-8 lg:p-12">
           {[
             "-right-20 -top-24 h-72 w-72",
             "-bottom-32 -left-16 h-80 w-80",
@@ -117,7 +118,7 @@ export function VisitShop() {
                   href={directionsHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 whitespace-nowrap rounded-full bg-white px-4 py-3 text-center text-[15px] font-medium text-[#1c64f2] transition-colors hover:bg-[#e8efff] sm:flex-none sm:px-6"
+                  className="flex-1 whitespace-nowrap rounded-full bg-white px-4 py-3 text-center text-[15px] font-medium text-[#fb5908] transition-colors hover:bg-[#ffece0] sm:flex-none sm:px-6"
                 >
                   Get directions
                 </a>

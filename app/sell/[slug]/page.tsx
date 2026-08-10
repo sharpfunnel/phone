@@ -41,7 +41,7 @@ export async function generateMetadata({
 
   return {
     title: `Sell your ${model.name} — F-EX`,
-    description: `Get a verified price for your ${model.brand} ${model.name} in sixty seconds, locked for 7 days and paid at your door in Delhi NCR.`,
+    description: `Get a verified price for your ${model.brand} ${model.name} in sixty seconds, locked for 7 days and paid at your door in Guwahati.`,
   };
 }
 
@@ -92,7 +92,7 @@ export default async function SellModelPage({
             variants={variants}
             photo={photoFor(model)}
             aside={
-              <aside className="relative h-fit overflow-hidden rounded-2xl bg-[#1c64f2] p-8 text-white">
+              <aside className="relative h-fit overflow-hidden rounded-2xl bg-[#fb5908] p-8 text-white">
             {["-right-16 -top-20 h-56 w-56", "-bottom-24 -left-12 h-52 w-52"].map(
               (position) => (
                 <span
@@ -140,7 +140,7 @@ export default async function SellModelPage({
             </ol>
 
                 <p className="relative mt-7 border-t border-white/20 pt-5 text-[12px] leading-snug text-white/70">
-                  Free doorstep pickup across Delhi NCR. ID is checked only after
+                  Free doorstep pickup across Guwahati. ID is checked only after
                   the inspection, never before you see your price.
                 </p>
               </aside>

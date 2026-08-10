@@ -18,7 +18,7 @@ body {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
-/* Custom cursor, in the brand blue.
+/* Custom cursor, in the brand orange.
 
    These are popovers so they live in the browser's top layer. A modal
    <dialog> is promoted there too and sits above every z-index, so a normally
@@ -44,27 +44,27 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background-color: #1c64f2;
+  background-color: #fb5908;
 }
 
 .cursor-ring {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  border: 1.5px solid #1c64f2;
+  border: 1.5px solid #fb5908;
   transition:
     width 0.25s ease,
     height 0.25s ease,
     opacity 0.2s ease;
 }
 
-/* On the blue panels a blue cursor would disappear, so flip both layers to
-   white while the pointer is over one. */
-.cursor-on-blue .cursor-dot {
+/* On the dark brand panels an orange cursor would disappear, so flip both
+   layers to white while the pointer is over one. */
+.cursor-on-dark .cursor-dot {
   background-color: #ffffff;
 }
 
-.cursor-on-blue .cursor-ring {
+.cursor-on-dark .cursor-ring {
   border-color: #ffffff;
 }
 

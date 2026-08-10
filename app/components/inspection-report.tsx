@@ -82,7 +82,7 @@ export function InspectionReport({ phone }: { phone: Phone }) {
       <button
         type="button"
         onClick={openDialog}
-        className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-[#1c64f2] px-4 py-2.5 text-[13px] font-medium text-white transition-colors hover:bg-[#1751c9]"
+        className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-[#fb5908] px-4 py-2.5 text-[13px] font-medium text-white transition-colors hover:bg-[#d24705]"
       >
         View inspection report
       </button>
@@ -114,7 +114,7 @@ export function InspectionReport({ phone }: { phone: Phone }) {
                 <div className="flex gap-4">
                   {phone.photo && (
                     <div className="hidden w-[76px] shrink-0 flex-col gap-3 sm:flex">
-                      <div className="relative aspect-square overflow-hidden rounded-xl border-2 border-[#1c64f2]">
+                      <div className="relative aspect-square overflow-hidden rounded-xl border-2 border-[#fb5908]">
                         <Image
                           src={phone.photo}
                           alt=""
@@ -127,7 +127,7 @@ export function InspectionReport({ phone }: { phone: Phone }) {
                   )}
 
                   <div className="relative flex-1 overflow-hidden rounded-2xl border border-black/[0.07]">
-                    <span className="absolute left-4 top-4 z-10 rounded-full bg-[#1c64f2] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-white">
+                    <span className="absolute left-4 top-4 z-10 rounded-full bg-[#fb5908] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-white">
                       F-EX Assured
                     </span>
 
@@ -185,7 +185,7 @@ export function InspectionReport({ phone }: { phone: Phone }) {
                   </button>
                   <button
                     type="button"
-                    className="h-[58px] flex-1 rounded-xl bg-[#1c64f2] px-4 text-[15px] font-medium text-white transition-colors hover:bg-[#1751c9]"
+                    className="h-[58px] flex-1 rounded-xl bg-[#fb5908] px-4 text-[15px] font-medium text-white transition-colors hover:bg-[#d24705]"
                   >
                     Buy Now
                   </button>
@@ -205,7 +205,7 @@ export function InspectionReport({ phone }: { phone: Phone }) {
                 </p>
 
                 <div className="mt-4 inline-flex items-center gap-2 rounded-lg border border-black/[0.07] bg-[#f7f8f8] p-1">
-                  <span className="flex items-center gap-1 rounded-md bg-[#1c64f2] px-2 py-1 text-[13px] font-semibold text-white">
+                  <span className="flex items-center gap-1 rounded-md bg-[#fb5908] px-2 py-1 text-[13px] font-semibold text-white">
                     {phone.rating.toFixed(1)}
                     <span aria-hidden="true">★</span>
                   </span>
@@ -228,7 +228,7 @@ export function InspectionReport({ phone }: { phone: Phone }) {
 
                 <div className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#0b0d0e] px-4 py-2.5 text-[14px] font-medium text-white">
                   Get it for ₹{inr.format(memberPrice)} with
-                  <span className="font-semibold tracking-[0.08em] text-[#7aa5ff]">
+                  <span className="font-semibold tracking-[0.08em] text-[#ff9b5c]">
                     PLUS
                   </span>
                 </div>
@@ -237,7 +237,7 @@ export function InspectionReport({ phone }: { phone: Phone }) {
                   ₹{inr.format(emi)}/month EMI available.{" "}
                   <button
                     type="button"
-                    className="font-medium text-[#1c64f2] hover:underline"
+                    className="font-medium text-[#fb5908] hover:underline"
                   >
                     View Plans
                   </button>
@@ -253,7 +253,7 @@ export function InspectionReport({ phone }: { phone: Phone }) {
                     Condition{" "}
                     <button
                       type="button"
-                      className="text-[14px] font-medium text-[#1c64f2] hover:underline"
+                      className="text-[14px] font-medium text-[#fb5908] hover:underline"
                     >
                       Learn More
                     </button>
@@ -262,7 +262,7 @@ export function InspectionReport({ phone }: { phone: Phone }) {
                     <span
                       className={`flex h-[18px] w-[18px] items-center justify-center rounded border transition-colors ${
                         dealsOnly
-                          ? "border-[#1c64f2] bg-[#1c64f2] text-white"
+                          ? "border-[#fb5908] bg-[#fb5908] text-white"
                           : "border-black/20 bg-white text-transparent"
                       }`}
                     >
@@ -287,7 +287,7 @@ export function InspectionReport({ phone }: { phone: Phone }) {
                       aria-pressed={tier === t}
                       className={`rounded-lg border px-3 py-2.5 text-[14px] font-medium transition-colors ${
                         tier === t
-                          ? "border-[#1c64f2] bg-[#eaf0fe] text-[#1c64f2]"
+                          ? "border-[#fb5908] bg-[#ffefe6] text-[#fb5908]"
                           : "border-black/10 text-[#3d4348] hover:bg-[#f7f8f8]"
                       }`}
                     >
@@ -296,8 +296,8 @@ export function InspectionReport({ phone }: { phone: Phone }) {
                   ))}
                 </div>
 
-                <div className="mt-4 overflow-hidden rounded-xl border border-[#1c64f2]/20">
-                  <p className="flex items-center gap-2 bg-[#1c64f2] px-4 py-2.5 text-[13px] font-medium text-white">
+                <div className="mt-4 overflow-hidden rounded-xl border border-[#fb5908]/20">
+                  <p className="flex items-center gap-2 bg-[#fb5908] px-4 py-2.5 text-[13px] font-medium text-white">
                     <CheckIcon />
                     All devices have a default 6 Months warranty out of the box
                   </p>
@@ -311,7 +311,7 @@ export function InspectionReport({ phone }: { phone: Phone }) {
                       onClick={() => setWarrantyAdded((v) => !v)}
                       className={`rounded-lg px-5 py-2 text-[13px] font-medium transition-colors ${
                         warrantyAdded
-                          ? "bg-[#eaf0fe] text-[#1c64f2]"
+                          ? "bg-[#ffefe6] text-[#fb5908]"
                           : "bg-[#0b0d0e] text-white hover:bg-[#26292c]"
                       }`}
                     >
@@ -352,7 +352,7 @@ export function InspectionReport({ phone }: { phone: Phone }) {
                         !option.available
                           ? "cursor-not-allowed border-black/10 text-[#b3b8bd] line-through"
                           : storage === option.label
-                            ? "border-[#1c64f2] bg-[#eaf0fe] text-[#1c64f2]"
+                            ? "border-[#fb5908] bg-[#ffefe6] text-[#fb5908]"
                             : "border-black/10 text-[#3d4348] hover:bg-[#f7f8f8]"
                       }`}
                     >
@@ -375,7 +375,7 @@ export function InspectionReport({ phone }: { phone: Phone }) {
                       style={{ backgroundColor: c.hex }}
                       className={`flex h-11 w-11 items-center justify-center rounded-full border transition-shadow ${
                         color === c.name
-                          ? "border-[#1c64f2] shadow-[0_0_0_2px_#1c64f2]"
+                          ? "border-[#fb5908] shadow-[0_0_0_2px_#fb5908]"
                           : "border-black/15"
                       }`}
                     >

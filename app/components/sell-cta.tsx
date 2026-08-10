@@ -45,7 +45,7 @@ export function SellCta() {
   return (
     <section className="bg-white py-20 lg:py-24">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-        <div className="grid items-center gap-10 rounded-3xl bg-[#1c64f2] p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] lg:p-12">
+        <div className="grid items-center gap-10 rounded-3xl bg-[#fb5908] p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] lg:p-12">
           {/* ---------------- Copy and entry points ---------------- */}
           <div>
             <h2 className="max-w-lg text-[clamp(1.75rem,3vw,2.4rem)] font-semibold leading-[1.15] tracking-[-0.02em] text-white">
@@ -127,7 +127,7 @@ export function SellCta() {
           </div>
 
           {/* ---------------- Visual ---------------- */}
-          {/* Backdrop is flooded with the same blue as the panel, so no frame. */}
+          {/* Backdrop is flooded with the same brand colour as the panel, so no frame. */}
           <Image
             src="/sell-cta.jpg"
             alt="A customer browsing our refurbished phone listings"

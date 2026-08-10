@@ -130,7 +130,7 @@ export function ModelSearch() {
           />
           <button
             type="submit"
-            className="shrink-0 rounded-full bg-[#1c64f2] px-5 py-2 text-[14px] font-medium text-white transition-colors hover:bg-[#1751c9]"
+            className="shrink-0 rounded-full bg-[#fb5908] px-5 py-2 text-[14px] font-medium text-white transition-colors hover:bg-[#d24705]"
           >
             Check price
           </button>
@@ -155,7 +155,7 @@ export function ModelSearch() {
                 onMouseEnter={() => setActive(i)}
                 onClick={() => choose(model.name)}
                 className={`flex w-full items-center justify-between gap-4 px-5 py-3 text-left transition-colors ${
-                  i === active ? "bg-[#f2f5fb]" : "bg-white"
+                  i === active ? "bg-[#fdf4ef]" : "bg-white"
                 }`}
               >
                 <span className="text-[15px] text-[#0b0d0e]">

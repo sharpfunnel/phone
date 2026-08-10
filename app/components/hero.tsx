@@ -20,7 +20,7 @@ export function Hero() {
         <div>
           <span className="inline-flex items-center rounded-full border border-black/10 bg-white px-5 py-2.5 text-[13px] font-medium uppercase tracking-[0.14em] text-[#3d4348]">
             We buy&nbsp;·&nbsp;We sell&nbsp;·&nbsp;
-            <span className="text-[#1c64f2]">Delhi NCR</span>
+            <span className="text-[#fb5908]">Guwahati</span>
           </span>
 
           <h1 className="mt-8 text-[clamp(2.5rem,5.2vw,4.25rem)] font-normal leading-[1.06] tracking-[-0.03em] text-[#0b0d0e]">
@@ -40,7 +40,7 @@ export function Hero() {
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <Link
               href="/sell"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1c64f2] px-8 py-4 text-base font-medium text-white transition-colors hover:bg-[#1751c9]"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#fb5908] px-8 py-4 text-base font-medium text-white transition-colors hover:bg-[#d24705]"
             >
               <SwapLabel>Get my selling price</SwapLabel>
               <ArrowSwap />

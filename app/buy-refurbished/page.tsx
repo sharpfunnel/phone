@@ -52,7 +52,7 @@ export default async function BuyRefurbishedPage({
             {query && (
               <Link
                 href="/buy-refurbished"
-                className="font-medium text-[#1c64f2] hover:underline"
+                className="font-medium text-[#fb5908] hover:underline"
               >
                 Clear search
               </Link>
@@ -73,7 +73,7 @@ export default async function BuyRefurbishedPage({
                 </p>
                 <Link
                   href="/buy-refurbished"
-                  className="mt-6 inline-flex rounded-full bg-[#1c64f2] px-6 py-3 text-[14px] font-medium text-white transition-colors hover:bg-[#1751c9]"
+                  className="mt-6 inline-flex rounded-full bg-[#fb5908] px-6 py-3 text-[14px] font-medium text-white transition-colors hover:bg-[#d24705]"
                 >
                   See all phones
                 </Link>

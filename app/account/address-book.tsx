@@ -43,7 +43,7 @@ export function AddressBook() {
   }
 
   const field =
-    "mt-1.5 w-full rounded-xl border border-black/10 px-4 py-2.5 text-[14px] text-[#0b0d0e] outline-none placeholder:text-[#9aa0a6] focus:border-[#1c64f2]";
+    "mt-1.5 w-full rounded-xl border border-black/10 px-4 py-2.5 text-[14px] text-[#0b0d0e] outline-none placeholder:text-[#9aa0a6] focus:border-[#fb5908]";
   const labelClass = "block text-[13px] font-medium text-[#3d4348]";
 
   return (
@@ -63,7 +63,7 @@ export function AddressBook() {
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="shrink-0 rounded-full bg-[#1c64f2] px-5 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-[#1751c9]"
+            className="shrink-0 rounded-full bg-[#fb5908] px-5 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-[#d24705]"
           >
             Add address
           </button>
@@ -87,7 +87,7 @@ export function AddressBook() {
                   aria-pressed={form.label === label}
                   className={`rounded-full border px-4 py-1.5 text-[13px] transition-colors ${
                     form.label === label
-                      ? "border-[#1c64f2] bg-[#eaf0fe] font-medium text-[#1c64f2]"
+                      ? "border-[#fb5908] bg-[#ffefe6] font-medium text-[#fb5908]"
                       : "border-black/10 bg-white text-[#3d4348] hover:bg-[#f2f3f4]"
                   }`}
                 >
@@ -133,7 +133,7 @@ export function AddressBook() {
                 id="city"
                 value={form.city}
                 onChange={(e) => set("city", e.target.value)}
-                placeholder="New Delhi"
+                placeholder="Guwahati"
                 className={field}
               />
             </div>
@@ -150,7 +150,7 @@ export function AddressBook() {
                 onChange={(e) =>
                   set("pincode", e.target.value.replace(/\D/g, ""))
                 }
-                placeholder="110019"
+                placeholder="781029"
                 className={field}
               />
             </div>
@@ -165,7 +165,7 @@ export function AddressBook() {
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <button
               type="submit"
-              className="rounded-full bg-[#1c64f2] px-6 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-[#1751c9]"
+              className="rounded-full bg-[#fb5908] px-6 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-[#d24705]"
             >
               Save address
             </button>
@@ -175,7 +175,7 @@ export function AddressBook() {
                 setOpen(false);
                 setError(null);
               }}
-              className="text-[14px] text-[#1c64f2] hover:underline"
+              className="text-[14px] text-[#fb5908] hover:underline"
             >
               Cancel
             </button>
@@ -194,7 +194,7 @@ export function AddressBook() {
               key={address.id}
               className={`rounded-xl border p-5 ${
                 address.isDefault
-                  ? "border-[#1c64f2] bg-[#f7faff]"
+                  ? "border-[#fb5908] bg-[#fffaf7]"
                   : "border-black/[0.08]"
               }`}
             >
@@ -203,7 +203,7 @@ export function AddressBook() {
                   {address.label}
                 </span>
                 {address.isDefault && (
-                  <span className="rounded-full bg-[#eaf0fe] px-2.5 py-0.5 text-[11px] font-medium text-[#1c64f2]">
+                  <span className="rounded-full bg-[#ffefe6] px-2.5 py-0.5 text-[11px] font-medium text-[#fb5908]">
                     Default
                   </span>
                 )}
@@ -226,7 +226,7 @@ export function AddressBook() {
                   <button
                     type="button"
                     onClick={() => setDefaultAddress(address.id)}
-                    className="font-medium text-[#1c64f2] hover:underline"
+                    className="font-medium text-[#fb5908] hover:underline"
                   >
                     Make default
                   </button>

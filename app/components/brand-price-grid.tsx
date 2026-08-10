@@ -66,7 +66,7 @@ export function BrandPriceGrid({ title }: { title?: string }) {
                   </div>
                 </div>
 
-                <p className="mt-3 text-center text-[13px] text-[#1c64f2]">
+                <p className="mt-3 text-center text-[13px] text-[#fb5908]">
                   Starting From
                 </p>
                 <p className="text-center text-[15px] font-semibold text-[#0b0d0e]">

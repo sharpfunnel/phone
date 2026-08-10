@@ -53,7 +53,7 @@ export function SellCatalogue({ brand }: { brand?: string }) {
               aria-current={!active ? "true" : undefined}
               className={`inline-flex h-[52px] items-center rounded-xl border px-5 text-[14px] font-medium transition-colors ${
                 !active
-                  ? "border-[#1c64f2] bg-[#eaf0fe] text-[#1c64f2]"
+                  ? "border-[#fb5908] bg-[#ffefe6] text-[#fb5908]"
                   : "border-black/[0.08] bg-white text-[#3d4348] hover:bg-[#f7f8f8]"
               }`}
             >
@@ -73,7 +73,7 @@ export function SellCatalogue({ brand }: { brand?: string }) {
                   aria-label={name}
                   className={`inline-flex h-[52px] items-center justify-center rounded-xl border px-5 transition-colors ${
                     isActive
-                      ? "border-[#1c64f2] bg-[#eaf0fe]"
+                      ? "border-[#fb5908] bg-[#ffefe6]"
                       : "border-black/[0.08] bg-white hover:bg-[#f7f8f8]"
                   }`}
                 >
@@ -109,7 +109,7 @@ export function SellCatalogue({ brand }: { brand?: string }) {
               <li key={model.name}>
                 <Link
                   href={`/sell/${modelSlug(model.name)}`}
-                  className="group flex items-center gap-4 rounded-2xl border border-black/[0.08] bg-white p-4 transition-colors hover:border-[#1c64f2]/40 hover:bg-[#f7faff]"
+                  className="group flex items-center gap-4 rounded-2xl border border-black/[0.08] bg-white p-4 transition-colors hover:border-[#fb5908]/40 hover:bg-[#fffaf7]"
                 >
                   <span className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-[#f5f6f7]">
                     {photo ? (
@@ -154,7 +154,7 @@ export function SellCatalogue({ brand }: { brand?: string }) {
                     </span>
                   </span>
 
-                  <span className="flex shrink-0 items-center gap-1.5 whitespace-nowrap text-[14px] font-medium text-[#1c64f2]">
+                  <span className="flex shrink-0 items-center gap-1.5 whitespace-nowrap text-[14px] font-medium text-[#fb5908]">
                     Get price
                     <span className="transition-transform duration-300 ease-out group-hover:translate-x-1 motion-reduce:transition-none">
                       <ArrowIcon />
@@ -169,7 +169,7 @@ export function SellCatalogue({ brand }: { brand?: string }) {
         {active && (
           <p className="mt-8 text-[14px] text-[#6b7177]">
             Showing {models.length} {active} models.{" "}
-            <Link href="/sell" className="font-medium text-[#1c64f2] hover:underline">
+            <Link href="/sell" className="font-medium text-[#fb5908] hover:underline">
               Show every brand
             </Link>
           </p>

@@ -74,7 +74,7 @@ const REASONS: { icon: keyof typeof ICONS; title: string; body: string }[] = [
   {
     icon: "star",
     title: "12,400 sales, rated 4.9 / 5",
-    body: "Across Delhi NCR, by the people who actually sold us their phone.",
+    body: "Across Guwahati, by the people who actually sold us their phone.",
   },
 ];
 
@@ -96,7 +96,7 @@ export function WhySell() {
               key={reason.title}
               className="rounded-2xl border border-black/[0.06] bg-white p-7"
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#eaf0fe] text-[#1c64f2]">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#ffefe6] text-[#fb5908]">
                 <svg
                   viewBox="0 0 24 24"
                   aria-hidden="true"

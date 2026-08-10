@@ -43,7 +43,7 @@ export function HowItWorks() {
               key={step.stage}
               className="rounded-2xl border border-black/[0.09] bg-white p-8"
             >
-              <p className="flex items-baseline gap-2 text-[13px] font-medium uppercase tracking-[0.12em] text-[#1c64f2]">
+              <p className="flex items-baseline gap-2 text-[13px] font-medium uppercase tracking-[0.12em] text-[#fb5908]">
                 <span className="text-[24px] font-semibold tracking-[0.02em]">
                   {String(i + 1).padStart(2, "0")}
                 </span>

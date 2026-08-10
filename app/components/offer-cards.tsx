@@ -9,7 +9,7 @@ const OFFERS = [
     blurb: "Put your old phone against a newer one and pay only the gap.",
     href: "/sell",
     photo: "/phones/iphone-12.jpg",
-    // Each card gets its own blob placement so three blue tiles in a row do
+    // Each card gets its own blob placement so three brand tiles in a row do
     // not read as one repeated block.
     decor: ["-right-16 -top-20 h-56 w-56", "-bottom-24 left-24 h-44 w-44"],
   },
@@ -46,7 +46,7 @@ export function OfferCards() {
           {OFFERS.map((offer) => (
             <li
               key={offer.title}
-              className="relative flex min-h-[240px] overflow-hidden rounded-2xl bg-[#1c64f2] p-7"
+              className="relative flex min-h-[240px] overflow-hidden rounded-2xl bg-[#fb5908] p-7"
             >
               {offer.decor.map((position) => (
                 <span
@@ -69,7 +69,7 @@ export function OfferCards() {
                 <Link
                   href={offer.href}
                   aria-label={offer.title}
-                  className="group inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-[#1c64f2] transition-colors hover:bg-[#e8efff]"
+                  className="group inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-[#fb5908] transition-colors hover:bg-[#ffece0]"
                 >
                   <ArrowSwap className="h-[18px] w-[18px]" />
                 </Link>

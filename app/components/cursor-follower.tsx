@@ -138,7 +138,7 @@ export function CursorFollower() {
         "a, button, input, select, textarea, summary, [role='button']",
       );
       ring.classList.toggle("cursor-ring-active", Boolean(interactive));
-      root.classList.toggle("cursor-on-blue", isOnDarkSurface(target));
+      root.classList.toggle("cursor-on-dark", isOnDarkSurface(target));
     };
 
     const onLeave = () => root.classList.remove("cursor-ready");
@@ -161,7 +161,7 @@ export function CursorFollower() {
       root.classList.remove(
         "has-custom-cursor",
         "cursor-ready",
-        "cursor-on-blue",
+        "cursor-on-dark",
       );
     };
   }, [enabled]);

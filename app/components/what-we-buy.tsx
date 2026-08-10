@@ -85,7 +85,7 @@ function Tick() {
     <svg
       viewBox="0 0 24 24"
       aria-hidden="true"
-      className="mt-0.5 h-4 w-4 shrink-0 text-[#1c64f2]"
+      className="mt-0.5 h-4 w-4 shrink-0 text-[#fb5908]"
       fill="none"
       stroke="currentColor"
       strokeWidth={2.4}
@@ -115,7 +115,7 @@ export function WhatWeBuy() {
               key={category.name}
               className="rounded-2xl border border-black/[0.06] bg-white p-5"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#eaf0fe] text-[#1c64f2]">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#ffefe6] text-[#fb5908]">
                 <Icon name={category.icon} />
               </span>
               <h3 className="mt-4 text-[15px] font-semibold text-[#0b0d0e]">
