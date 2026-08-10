@@ -48,7 +48,7 @@ export function SiteHeader() {
           {/* Outlined rather than a solid white pill, so its label can be white
               like the rest of the header text. */}
           <Link
-            href="/login?next=/%23sell"
+            href="/login?next=/sell"
             className="hidden whitespace-nowrap rounded-full border border-white px-4 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/15 sm:inline-block sm:px-6 sm:py-3 sm:text-[15px]"
           >
             Get a quote

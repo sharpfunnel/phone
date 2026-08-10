@@ -4,7 +4,7 @@ const COLUMNS = [
   {
     heading: "Sell",
     links: [
-      { label: "Get a quote", href: "/#sell" },
+      { label: "Get a quote", href: "/sell" },
       { label: "How it works", href: "/#how-it-works" },
       { label: "Price lock", href: "/#how-it-works" },
       { label: "Pickup areas", href: "/#visit" },

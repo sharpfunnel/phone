@@ -39,7 +39,7 @@ export function Hero() {
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <Link
-              href="/#sell"
+              href="/sell"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1c64f2] px-8 py-4 text-base font-medium text-white transition-colors hover:bg-[#1751c9]"
             >
               <SwapLabel>Get my selling price</SwapLabel>

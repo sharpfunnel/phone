@@ -69,7 +69,7 @@ export default async function SellModelPage({
             </li>
             <li aria-hidden="true">/</li>
             <li>
-              <Link href="/#sell" className="hover:text-[#0b0d0e]">
+              <Link href="/sell" className="hover:text-[#0b0d0e]">
                 Sell your phone
               </Link>
             </li>

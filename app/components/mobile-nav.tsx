@@ -115,7 +115,12 @@ export function MobileNav() {
 
   const tabs = [
     { label: "Home", href: "/", icon: <HomeIcon />, match: pathname === "/" },
-    { label: "Sell", href: "/#sell", icon: <TagIcon />, match: false },
+    {
+      label: "Sell",
+      href: "/sell",
+      icon: <TagIcon />,
+      match: pathname === "/sell",
+    },
     {
       label: "Buy",
       href: "/buy-refurbished",

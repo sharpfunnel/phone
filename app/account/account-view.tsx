@@ -286,7 +286,7 @@ export function AccountView() {
               <EmptyState
                 title="No quotes yet"
                 body="Find your phone, answer five questions, and your price is held for 7 days."
-                action={{ label: "Get a quote", href: "/#sell" }}
+                action={{ label: "Get a quote", href: "/sell" }}
               />
             ) : (
               <div className="p-8">
@@ -351,7 +351,7 @@ export function AccountView() {
             <EmptyState
               title="No pickups booked"
               body="Once you accept a quote, your two-hour pickup slot and live agent tracking show up here."
-              action={{ label: "Get a quote", href: "/#sell" }}
+              action={{ label: "Get a quote", href: "/sell" }}
             />
           )}
 

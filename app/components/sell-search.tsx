@@ -23,9 +23,19 @@ const STATS = [
   { value: "54 min", label: "Median quote to payout" },
 ];
 
-export function SellSearch() {
+/**
+ * `as` lets the dedicated /sell page render this as the page's h1 while the
+ * home page keeps it as an h2 under its own hero.
+ */
+export function SellSearch({
+  as: Heading = "h2",
+  id = "sell",
+}: {
+  as?: "h1" | "h2";
+  id?: string;
+}) {
   return (
-    <section id="sell" className="bg-white py-20 lg:py-24">
+    <section id={id} className="bg-white py-20 lg:py-24">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
         <div className="relative overflow-hidden rounded-3xl bg-[#1c64f2]">
           {[
@@ -45,10 +55,10 @@ export function SellSearch() {
               Sell your phone
             </p>
 
-            <h2 className="mx-auto mt-5 max-w-3xl text-[clamp(2rem,4.2vw,3.1rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-white">
+            <Heading className="mx-auto mt-5 max-w-3xl text-[clamp(2rem,4.2vw,3.1rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-white">
               Tell us the model, get{" "}
               <span className="text-[#bcd3fb]">instant cash</span>
-            </h2>
+            </Heading>
 
             <p className="mx-auto mt-5 max-w-lg text-[16px] leading-[1.6] text-white/80">
               Free doorstep pickup, a certified data wipe and payment before the
