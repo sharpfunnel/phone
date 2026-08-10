@@ -1,5 +1,6 @@
-// `mapQuery` is what the embedded map searches for, so it must stay in step
-// with the address above or customers will be sent to the wrong place.
+// The map pins by coordinate, not by name search — a name search can match a
+// different branch. These are the ones on our Google Business listing, so they
+// only change if the shop moves.
 const SHOP = {
   addressLines: [
     "F-EX The Openbox Store, Lokhra",
@@ -7,8 +8,9 @@ const SHOP = {
     "Lokhra Road, NH37, Kamakhya",
     "Guwahati 781029",
   ],
-  mapQuery:
-    "Fex The Openbox Store, Lokhra Road NH37, Nalapara, Guwahati 781029",
+  mapLabel: "F-EX The Openbox Store, Lokhra",
+  mapCoords: "26.1117932,91.7586854",
+  mapsListing: "https://maps.app.goo.gl/pvahEcMsPR6EfSAW8",
   phone: "+91 84728 33473",
   phoneHref: "tel:+918472833473",
   hours: [
@@ -77,7 +79,7 @@ function PhoneIcon() {
 
 export function VisitShop() {
   const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-    SHOP.mapQuery,
+    SHOP.mapCoords,
   )}`;
 
   return (
@@ -148,6 +150,14 @@ export function VisitShop() {
                         </span>
                       ))}
                     </address>
+                    <a
+                      href={SHOP.mapsListing}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 inline-block text-[14px] text-white/70 underline-offset-4 hover:text-white hover:underline"
+                    >
+                      See the shop on Google
+                    </a>
                   </div>
                 </li>
 
@@ -205,8 +215,8 @@ export function VisitShop() {
               <iframe
                 title="Map to our shop"
                 src={`https://www.google.com/maps?q=${encodeURIComponent(
-                  SHOP.mapQuery,
-                )}&output=embed`}
+                  `${SHOP.mapCoords}(${SHOP.mapLabel})`,
+                )}&z=16&output=embed`}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="h-full min-h-[380px] w-full border-0"
